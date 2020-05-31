@@ -1,18 +1,20 @@
 class Order < ApplicationRecord
-  belongs_to :company
+  paginates_per 5
+  belongs_to :service_price
   belongs_to :client
-  belongs_to :service
 
-  validates :date_start, :date_end, :review, presence: true
+  validates :date_start, :review, :price, presence: true
   validates :review, numericality: { greater_than_or_equal_to: 0.0, less_than_or_equal_to: 5.0 }
-  validates_datetime :date_start, before: :date_end
-  validates_datetime :date_end, after: :date_start
 
   state_machine initial: :pending do
     state :active
-    state :rejected
+    state :rejected do
+      validates :date_end, presence: true
+    end
     state :pending
-    state :completed
+    state :completed do
+      validates :date_end, presence: true
+    end
 
     event :activate do
       transition pending: :active
@@ -23,7 +25,7 @@ class Order < ApplicationRecord
     end
 
     event :complete do
-      transition accepted: :completed
+      transition active: :completed
     end
   end
 end
