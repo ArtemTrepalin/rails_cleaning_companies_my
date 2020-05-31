@@ -15,7 +15,7 @@ AllCops:
 
 #This cop checks that the ABC size of methods is not higher than the configured maximum.
 Metrics/AbcSize:
-  Max: 30
+  Max: 35
 
 #This cop checks if the length of a block exceeds some maximum value.
 Metrics/BlockLength:
@@ -46,7 +46,7 @@ Metrics/ModuleLength:
 #This cop tries to produce a complexity score that's a measure of the complexity the 
 #reader experiences when looking at a method.
 Metrics/PerceivedComplexity:
-  Max: 10
+  Max: 15
 
 #This cop checks for non-ascii (non-English) characters in comments. 
 Style/AsciiComments:
