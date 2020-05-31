@@ -1,0 +1,213 @@
+ru:
+
+  client_mailer:
+    welcome:
+      subject: "Добро пожаловать!"
+
+  control: Управление
+  header:
+    exit: Выход
+    home: Домашняя страница
+  cancel: Отмена
+
+  attributes:
+    id: ID
+    email: Почта
+    state: Статус
+    password: Пароль
+    phone_number: Телефон
+    role: Роль
+  web:
+    welcome:
+      index:
+        login_admin: Вход администратор
+        login_company: Вход компания
+        login_client: Вход клиент
+    admin:
+      welcome:
+        index:
+          list_admin: Список Администраторов
+          list_company: Список Компаний
+          list_client: Список Клиентов
+          list_city: Список Городов
+          list_article: Список Статей
+          list_service: Список Услуг
+          list_service_price: Список цен
+      admins:
+        index:
+          back: "Назад"
+          create new: "Создать нового администратора"
+          view profile: "Посмотреть данные администратора"
+        show:
+          back: "Назад"
+          edit: "Редактировать"
+          deleted: "Перевести в статус не активный"
+          activate: "Перевести в статус активный"
+        edit:
+          cancel: "Отмена"
+
+      companies:
+        index:
+          back: "Назад"
+          create new: "Создать новую компанию"
+          view profile: "Посмотреть данные компании"
+        new:
+
+        show:
+          back: "Назад"
+          edit: "Редактировать"
+          deleted: "Перевести в статус не активный"
+          activate: "Перевести в статус активный"
+        edit:
+          cancel: "Отмена"
+
+      clients:
+        index:
+          show: "Просмотр"
+          create: "Создать"
+          back: "Назад"
+        new:
+          back: "Назад"
+        show:
+          deleted: "Перевести в статус не активный"
+          activate: "Перевести в статус активный"
+          edit: "Изменить"
+          back: "Назад" 
+        edit: 
+          back: "Назад" 
+      articles:
+        index:
+          show: "Просмотр"
+          create: "Создать"
+          back: "Назад"
+          view article: "Просмотреть"
+        new:
+          back: "Назад"
+        show:
+          edit: "Изменить"
+          delete: "Удалить"
+          back: "Назад"
+      cities:
+        index:
+          deleted: "Удалить"
+          create: "Создать"
+          back: "Назад"    
+      services:
+        index:
+          create: Создать
+          back: Назад
+          view: Просмотреть
+        new:
+          cancel: "Отмена"
+        show:
+          edit: "Изменить"
+          delete: "Удалить"
+          back: "Назад"
+        edit:
+          cancel: "Отмена"
+      service_prices:
+        index:
+          back: "Назад"
+          create: "Создать"
+          view: "Просмотреть"
+        show:
+          back: "Назад"
+          edit: "Изменить"
+          deleted: "Перевести в статус не активный"
+          activate: "Перевести в статус активный"
+          disable: "Перевести в статус временно не доступно"
+
+  activerecord:
+    state_machines:
+      client:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            activate: Восстановить
+      admin:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            activate: Восстановить
+      company:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            activate: Восстановить
+      service_price:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+            disable: Временно не доступный
+          events:
+            del: Удалить
+            activate: Доступна
+            disable: Временно не доступна
+    models:
+      admin:
+        one: Администратор
+        others: Администраторы
+      company:
+        one: Компания
+        other: Компании
+      client:
+        one: Клиент
+        others: Клиенты
+      articles:
+        one: Статья
+        others: Статьи
+      city:
+        one: Город
+        others: Города
+      service:
+        one: Услуга
+        others: Услуга
+      service_price:
+        one: Цена
+        others: Цены  
+
+    attributes:
+      client:
+        name: Имя
+        surname: Фамилия
+        email: Почта
+        phone_number: Телефон
+        password: Пароль
+      company:
+        city: Город
+        name: Название компании
+        requisites: Реквизиты
+        rating: Рейтинг
+        description: Описание
+        website: Сайт
+        phonenumber: Телефон
+        phone_and_email: Телефон и почта
+      admin:
+        name: Имя администратора
+      article:
+        title: Заголовок
+        short_description: Краткое описание
+        description: Описание
+      city:
+        name: Название города
+      service:
+        name: Услуга
+      service_price:
+        price: Цена
+        service: Услуга
+        city: Город
+        company: Компания
+        city_id: Город
+        service_id: Услуга
+        company_id: Компания
+
